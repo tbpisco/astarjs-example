@@ -1,0 +1,124 @@
+<html lang="en"><head><title>A*</title><meta charset="utf-8"><style>/* http://meyerweb.com/eric/tools/css/reset/ 
+            v2.0 | 20110126
+            License: none (public domain)
+            */
+
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed, 
+            figure, figcaption, footer, header, hgroup, 
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure, 
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+            body {
+                line-height: 1;
+            }
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            @font-face {
+                font-family: 'FuturaHandwritten';
+                src: url('fonts/FuturaHandwritten.eot');
+                src: url('fonts/FuturaHandwritten.woff2') format('woff2'),
+                    url('fonts/FuturaHandwritten.woff') format('woff'),
+                    url('fonts/FuturaHandwritten.ttf') format('truetype'),
+                    url('fonts/FuturaHandwritten.svg#FuturaHandwritten') format('svg'),
+                    url('fonts/FuturaHandwritten.eot?#iefix') format('embedded-opentype');
+                font-weight: normal;
+                font-style: normal;
+            }
+            
+            body,html{
+                font-family: 'FuturaHandwritten';
+                margin:0;
+                padding: 0;
+                background: #5e9ac5;
+                text-align: center;
+            }
+
+            .container{
+                padding: 0.5% 0;
+                box-sizing: border-box;
+            }
+
+            #info {
+                padding: 0 0 1% 0;
+                margin: 0 auto;
+                text-align: left;
+            }
+
+            #info div {
+                display: inline-block;
+                width: 30%;
+            }
+
+            #info div:first-child {
+                width: 70%;
+            }
+
+            .legend-element {
+                width: 16px;
+                height: 16px;
+                background-image: url(images/tile-set.png);
+                display: inline-block;
+                margin: 0 2px;
+            }
+
+            .tree {
+                background-position: 48px 0;
+            }
+
+            .green {
+                background-position: 0 0;
+            }
+
+            .house {
+                background-position: -32px -16px;
+            }
+
+            .grass {
+                background-position: 80px 0;
+            }
+
+            .lake {
+                background-position: 32px -32px;
+            }
+
+            .rock {
+                background-position: 16px -448px;
+            }
+
+            #info a, #info a:active{
+                font-weight: bold;
+                color: black;
+            }</style><link rel="preload" href="images/tile-set.png" as="image"><link rel="preload" href="images/tile.jpg" as="image"></head><body><section><div class="container"><div id="map"></div></div></section><footer id="info"><div>Simple application to show the usage of npm package <a href="https://www.npmjs.com/package/astarjs" target="_blank">astarjs.</a><br>GitHub Library Repository <a href="https://github.com/tbpisco/astarjs" target="_blank">astarjs</a><br>GitHub Example Repository <a href="https://github.com/tbpisco/astarjs-example" target="_blank">astarjs-example</a><br></div><div class="legend"><ul><li><i class="legend-element green"></i> walkable tile</li><li><i class="legend-element grass"></i> walkable tile with weight</li><li><i class="legend-element house"></i><i class="legend-element tree"></i><i class="legend-element rock"></i><i class="legend-element lake"></i> non-walkable tiles</li></ul></div></footer><script defer="defer" src="js/game.c9c8483c1ebc2c2aa460.js?c9c8483c1ebc2c2aa460"></script></body></html>

@@ -1,0 +1,67 @@
+export enum TILE {
+	BORDER_TOP_LEFT,
+	BORDER_MIDDLE_LEFT,
+	BORDER_BOTTOM_LEFT,
+	BORDER_TOP_MIDDLE,
+	BORDER_BOTTOM_MIDDLE,
+	BORDER_TOP_RIGHT,
+	BORDER_MIDDLE_RIGHT,
+	BORDER_BOTTOM_RIGHT,
+	BOTTOM,
+	BOTTOM_LEFT,
+	BOTTOM_RIGHT,
+	END,
+	GRASS,
+	GREEN,
+	HOUSE,
+	LEFT,
+	MOUNTAIN,
+	MOUNTAIN_BROWN,
+	RIGHT,
+	START,
+	TOP_RIGHT,
+	TOP_LEFT,
+	TOP,
+	TREES,
+	WATER,
+}
+
+export enum GameState {
+	BUILD = 'BUILD',
+	END = 'END',
+	INITIAL = 'INITIAL',
+	PATHEND = 'PATHEND',
+	START = 'START',
+}
+
+export enum GameStateUpdate {
+	RANDOM = 'RANDOM',
+	REPEAT = 'REPEAT',
+}
+
+export enum CursorType {
+	HAND = 'hand',
+	POINTER = 'pointer',
+}
+
+export enum PathfindingType {
+	ALLDIAGONALS = 'ALL DIAGONALS',
+	DIAGONAL = 'DIAGONAL',
+	MANHATTAN = 'MANHATTAN',
+}
+
+export enum GameButtonId {
+	ALLDIAGONALS = 'ALL DIAGONALS',
+	DIAGONAL = 'DIAGONAL',
+	DONE = 'DONE',
+	MANHATTAN = 'MANHATTAN',
+	RANDOM = 'RANDOM',
+	RESET = 'RESET',
+	REPEAT = 'REPEAT',
+}
+
+declare global {
+	interface Window {
+		initGame: () => void;
+	}
+}

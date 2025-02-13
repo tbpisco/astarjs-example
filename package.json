@@ -1,0 +1,60 @@
+{
+	"name": "astarjs-example",
+	"version": "0.0.0",
+	"description": "Application to show the usage of Pathfinding algorithm library.",
+	"main": "src/app.js",
+	"typings": "lib/index.d.ts",
+	"scripts": {
+		"start": "webpack-dev-server --config webpack.config.js  --mode=development",
+		"build-dev": "webpack --config webpack.config.js --mode=development",
+		"build-prod": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode=production",
+		"lint": "eslint \"**/*.+(ts)\"",
+		"format": "prettier --write \"**/*.+(js|ts|json)\""
+	},
+	"author": "Thatiane Pisco",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:tbpisco/astarjs-example.git"
+	},
+	"homepage": "https://github.com/tbpisco/astarjs-example#readme",
+	"devDependencies": {
+		"@eslint/js": "^9.20.0",
+		"@types/jquery": "^3.5.32",
+		"@types/webpack-env": "^1.18.8",
+		"@typescript-eslint/eslint-plugin": "^8.24.0",
+		"@typescript-eslint/parser": "^8.24.0",
+		"astarjs": "^1.1.0",
+		"copy-webpack-plugin": "^12.0.2",
+		"eslint": "^9.20.1",
+		"globals": "^15.15.0",
+		"html-webpack-plugin": "^5.6.3",
+		"pixi.js": "^8.7.3",
+		"prettier": "^3.5.1",
+		"puppeteer": "^24.2.0",
+		"ts-loader": "^9.5.2",
+		"tslib": "^2.8.1",
+		"typescript": "^5.7.3",
+		"typescript-eslint": "^8.24.0",
+		"webpack": "^5.97.1",
+		"webpack-cli": "^6.0.1",
+		"webpack-dev-server": "^5.2.0",
+		"webpack-open-browser": "^2.0.2",
+		"webpack-simple-progress-plugin": "^0.0.5"
+	},
+	"files": [
+		"package.json",
+		"README.md"
+	],
+	"keywords": [
+		"pathfinding",
+		"astar",
+		"a star",
+		"a-star",
+		"path",
+		"a*",
+		"heuristic",
+		"manhattan",
+		"diagonal"
+	]
+}
