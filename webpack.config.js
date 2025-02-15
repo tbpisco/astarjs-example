@@ -1,12 +1,13 @@
 const path = require('path');
 const HtmlWepackPlugin = require('html-webpack-plugin');
-const { WebpackOpenBrowser, apps } = require('webpack-open-browser');
+const { WebpackOpenBrowser } = require('webpack-open-browser');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const SimpleProgressPlugin = require('webpack-simple-progress-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (options) => {
 	return {
+		mode: options.production ? 'production': 'development',
 		entry: './src/app.ts',
 		output: {
 			filename: 'js/game.[fullhash].js',
@@ -16,7 +17,7 @@ module.exports = (options) => {
 
 		performance: { hints: false },
 
-		devtool: process.env.NODE_ENV === 'development' ? 'source-map' : undefined,
+		devtool: options.production ? undefined : 'source-map',
 
 		module: {
 			rules: [
@@ -68,7 +69,7 @@ module.exports = (options) => {
 		},
 
 		optimization: {
-			minimize: process.env.NODE_ENV === 'production',
+			minimize: options.production,
 			minimizer: [
 				new TerserPlugin({
 					terserOptions: {
