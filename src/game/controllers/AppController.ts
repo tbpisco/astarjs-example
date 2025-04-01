@@ -165,6 +165,7 @@ export class AppController {
 			elementRow.forEach((elementCol, indexCol) => {
 				tile = this.mapView.tiles.get(`${indexCol}-${indexRow}`);
 				tile.type = elementCol;
+				tile.setTypePos(elementCol);
 				tile.update();
 				if (this.randomMode) tile.disable();
 				else tile.enable();
@@ -234,7 +235,7 @@ export class AppController {
 
 		this.pathFindingManager = new PathFinding({ heuristic, allowDiagonal });
 		this.pathFindingManager
-			.setWalkable({ type: TILE.GREEN, weight: 0 }, { type: TILE.GRASS, weight: 2 })
+			.setWalkable({ type: TILE.GREEN }, { type: TILE.GRASS, weight: 1 })
 			.setEnd(TILE.END)
 			.setStart(TILE.START);
 		const bestPath: { col: number; row: number }[] = this.pathFindingManager.find(this.map.get());
